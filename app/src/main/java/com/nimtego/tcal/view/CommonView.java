@@ -1,4 +1,4 @@
-package com.nimtego.tcal;
+package com.nimtego.tcal.view;
 
 import android.view.View;
 

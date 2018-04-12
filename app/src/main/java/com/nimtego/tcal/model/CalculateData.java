@@ -1,6 +1,4 @@
-package com.nimtego.tcal;
-
-import android.provider.ContactsContract;
+package com.nimtego.tcal.model;
 
 public class CalculateData {
     private String bill;

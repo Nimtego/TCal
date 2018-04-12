@@ -1,8 +1,11 @@
-package com.nimtego.tcal;
+package com.nimtego.tcal.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.nimtego.tcal.model.CalculateData;
+import com.nimtego.tcal.R;
 
 public class MainActivity extends AppCompatActivity implements MainView{
 
