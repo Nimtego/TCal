@@ -8,4 +8,14 @@
     <string name="_15">15%</string>
     <string name="_20">20%</string>
     <string name="zero">0.00</string>
+    <string name="line_long">Line long (m)</string>
+    <string name="power">Power (kW)</string>
+    <string name="voltage">Voltage (V)</string>
+    <string name="plate">Plate</string>
+    <string name="intersections">Intersections</string>
+    <string name="ground">Ground</string>
+    <string name="sand">Sand\ncub</string>
+    <string name="adjusting">Adjusting\ncub</string>
+    <string name="filling">Filling\ncub</string>
+    <string name="garbage">Garbage\ncub</string>
 </resources>
