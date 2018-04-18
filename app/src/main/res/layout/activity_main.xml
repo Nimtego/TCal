@@ -12,7 +12,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TableLayout
@@ -36,12 +36,39 @@
                 android:paddingBottom="5dp"
                 android:paddingTop="5dp">
 
-                <TextView
-                    android:id="@+id/line_long_textView"
+                <EditText
+                    android:id="@+id/project_name_editText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_span="4"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/project_name"
+                    android:inputType="textPersonName"/>
+            </TableRow>
+
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded_edges"
+                android:elevation="2dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:id="@+id/line_long_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
                     android:layout_span="1"
                     android:text="@string/line_long"/>
 
@@ -49,8 +76,8 @@
                     android:id="@+id/line_long_editText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
                     android:layout_span="3"
                     android:layout_weight="1"
                     android:ems="10"
@@ -73,9 +100,9 @@
                 <TextView
                     android:id="@+id/power_textView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
                     android:layout_span="1"
                     android:text="@string/power"/>
 
@@ -83,9 +110,9 @@
                     android:id="@+id/power_editText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="0.5"
                     android:ems="10"
                     android:gravity="center"
                     android:hint="@string/zero"
@@ -94,19 +121,20 @@
                 <TextView
                     android:id="@+id/voltage_textView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_gravity="center"
                     android:layout_span="1"
                     android:text="@string/voltage"/>
 
                 <EditText
-                    android:id="@+id/billEditText3"
+                    android:id="@+id/voltage_editText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="0.5"
                     android:ems="10"
                     android:gravity="center"
                     android:hint="@string/zero"
@@ -125,7 +153,7 @@
                 android:paddingTop="5dp">
 
                 <TextView
-                    android:id="@+id/intersections_textView88"
+                    android:id="@+id/intersections_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
@@ -134,7 +162,7 @@
                     android:text="@string/intersections"/>
 
                 <EditText
-                    android:id="@+id/power_editText69"
+                    android:id="@+id/intersections_editText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
@@ -159,13 +187,15 @@
                 android:paddingTop="5dp">
 
                 <android.support.v7.widget.AppCompatCheckBox
-                    android:id="@+id/plate_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/plate_CheckBox"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
-                    android:layout_span="1"
                     android:text="@string/plate"/>
+
+
+
             </TableRow>
         </TableLayout>
 
@@ -179,6 +209,12 @@
             android:elevation="2dp"
             android:paddingBottom="20dp">
 
+                <TextView
+                    android:id="@+id/name_project"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="18sp"/>
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

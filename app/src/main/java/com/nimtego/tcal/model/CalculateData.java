@@ -1,11 +1,12 @@
 package com.nimtego.tcal.model;
 
 public class CalculateData {
-    private String bill;
-    private String[] tip;
-    private String[] total;
-    private String customTip;
-    private String totalForCustom;
+    private String projectName;
+    private String lineLong;
+    private String power;
+    private String intersection;
+    private String voltage;
+    private boolean plate;
 
 
     private CalculateData() {
@@ -18,33 +19,38 @@ public class CalculateData {
     public class DataBuilder {
         private DataBuilder(){}
 
-        public DataBuilder bill(String bill) {
-            CalculateData.this.bill = bill;
+        public DataBuilder projectName(String projectName) {
+            CalculateData.this.projectName = projectName;
             return this;
         }
-        public DataBuilder tip(String[] tip) {
-            CalculateData.this.tip = tip;
+        public DataBuilder lineLong(String lineLong) {
+            CalculateData.this.lineLong = lineLong;
             return this;
         }
-        public DataBuilder total(String[] total) {
-            CalculateData.this.total = total;
+        public DataBuilder power(String power) {
+            CalculateData.this.power = power;
             return this;
         }
-        public DataBuilder customTip(String customTip) {
-            CalculateData.this.customTip = customTip;
+        public DataBuilder intersection(String intersection) {
+            CalculateData.this.intersection = intersection;
             return this;
         }
-        public DataBuilder tottalForCustom(String tottalForCustom) {
-            CalculateData.this.totalForCustom = totalForCustom;
+        public DataBuilder plate(boolean plate) {
+            CalculateData.this.plate = plate;
+            return this;
+        }
+        public DataBuilder voltage(String voltage) {
+            CalculateData.this.voltage = voltage;
             return this;
         }
         public CalculateData build() {
             CalculateData calculateData = new CalculateData();
-            calculateData.bill = CalculateData.this.bill;
-            calculateData.tip = CalculateData.this.tip;
-            calculateData.total = CalculateData.this.total;
-            calculateData.customTip = CalculateData.this.customTip;
-            calculateData.totalForCustom = CalculateData.this.totalForCustom;
+            calculateData.projectName = CalculateData.this.projectName;
+            calculateData.lineLong = CalculateData.this.lineLong;
+            calculateData.power = CalculateData.this.power;
+            calculateData.intersection = CalculateData.this.intersection;
+            calculateData.plate = CalculateData.this.plate;
+            calculateData.voltage = CalculateData.this.voltage;
             return calculateData;
         }
 
