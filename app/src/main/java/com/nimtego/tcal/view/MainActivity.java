@@ -1,12 +1,11 @@
 package com.nimtego.tcal.view;
 
-import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatCheckBox;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.nimtego.tcal.model.InputData;
 import com.nimtego.tcal.R;
@@ -69,7 +68,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void toast(String message) {
-
+        Toast.makeText(MainActivity.this, message,
+                Toast.LENGTH_SHORT).show();
     }
 
     @Override

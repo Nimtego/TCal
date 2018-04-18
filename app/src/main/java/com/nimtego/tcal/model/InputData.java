@@ -79,5 +79,12 @@ public class InputData {
             return inputData;
         }
 
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("Project name - ").append(projectName).
+            append("Line long -").append(lineLong).append(power).append(voltage).append(intersection).append(plate);
+            return String.valueOf(sb);
+        }
     }
 }
