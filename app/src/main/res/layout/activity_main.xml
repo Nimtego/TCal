@@ -174,7 +174,14 @@
                     android:inputType="numberDecimal"/>
 
             </TableRow>
-
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/plate_CheckBox"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/plate"/>
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -186,13 +193,22 @@
                 android:paddingBottom="5dp"
                 android:paddingTop="5dp">
 
-                <android.support.v7.widget.AppCompatCheckBox
-                    android:id="@+id/plate_CheckBox"
+                <Button
+                    android:id="@+id/clear_button"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
-                    android:text="@string/plate"/>
+                    android:text="@string/clear"/>
+
+                <Button
+                    android:id="@+id/add_button"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="8dp"
+
+                    android:layout_marginStart="8dp"
+                    android:text="@string/add"/>
 
 
 

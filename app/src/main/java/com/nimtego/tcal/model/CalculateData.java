@@ -12,6 +12,31 @@ public class CalculateData {
     private CalculateData() {
 
     }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public String getLineLong() {
+        return lineLong;
+    }
+
+    public String getPower() {
+        return power;
+    }
+
+    public String getIntersection() {
+        return intersection;
+    }
+
+    public String getVoltage() {
+        return voltage;
+    }
+
+    public boolean isPlate() {
+        return plate;
+    }
+
     public static DataBuilder dataBuilder() {
         return new CalculateData().new DataBuilder();
     }

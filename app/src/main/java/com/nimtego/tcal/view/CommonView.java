@@ -9,5 +9,4 @@ import android.view.View;
 public interface CommonView {
     void toast(String message);
     void alarm(String message);
-    void onClick(View view);
 }
