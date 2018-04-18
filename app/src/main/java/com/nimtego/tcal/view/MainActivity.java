@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.nimtego.tcal.model.CalculateData;
+import com.nimtego.tcal.model.InputData;
 import com.nimtego.tcal.R;
 import com.nimtego.tcal.presenter.Presenter;
 import com.nimtego.tcal.presenter.TrenchPresenter;
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
     }
 
     @Override
-    public CalculateData getData() {
-        return CalculateData.dataBuilder().
+    public InputData getData() {
+        return InputData.dataBuilder().
                 projectName(String.valueOf(projectName.getText())).
                 lineLong(String.valueOf(lineLong.getText())).
                 power(String.valueOf(power.getText())).
@@ -57,14 +57,14 @@ public class MainActivity extends AppCompatActivity implements MainView {
     }
 
     @Override
-    public void setData(CalculateData calculateData) {
+    public void setData(InputData inputData) {
         projectName.clearComposingText();
-        projectName.setText(calculateData.getProjectName());
-        lineLong.setText(calculateData.getLineLong());
-        power.setText(calculateData.getPower());
-        voltage.setText(calculateData.getVoltage());
-        intersection.setText(calculateData.getIntersection());
-        plate.setChecked(calculateData.isPlate());
+        projectName.setText(inputData.getProjectName());
+        lineLong.setText(inputData.getLineLong());
+        power.setText(inputData.getPower());
+        voltage.setText(inputData.getVoltage());
+        intersection.setText(inputData.getIntersection());
+        plate.setChecked(inputData.isPlate());
     }
 
     @Override

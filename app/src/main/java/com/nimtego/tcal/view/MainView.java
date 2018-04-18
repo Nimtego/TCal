@@ -1,8 +1,8 @@
 package com.nimtego.tcal.view;
 
-import com.nimtego.tcal.model.CalculateData;
+import com.nimtego.tcal.model.InputData;
 
 public interface MainView extends CommonView {
-    CalculateData getData();
-    void setData(CalculateData calculateData);
+    InputData getData();
+    void setData(InputData calculateData);
 }
