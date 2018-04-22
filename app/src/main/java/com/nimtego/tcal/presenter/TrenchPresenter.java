@@ -41,19 +41,17 @@ public class TrenchPresenter extends AbstractBasePresenter {
 
     private void getDataFromActivity() {
         InputData inputData = ((MainView)commonView).getData();
-        if (mProjectList == null) {
-            Log.v(TAG, " mProjectList is null (create ArrayList)");
-            mProjectList = new ArrayList<>();
-        }
         if (inputData.getProjectName().isEmpty() ) { // TODO: 18.04.2018 hint check?
             commonView.toast("Name is empty");
         }
-        if (nameIsBusy(inputData.getProjectName()) ) { // TODO: 18.04.2018 hint check?
+        else if (ProjectProvider.getProjectProvider().nameIsBusy(inputData.getProjectName())) { // TODO: 18.04.2018 hint check?
             commonView.toast("Name is busy");
         }
-        Project project = new Project(inputData.getProjectName());
-        project.setId(++idCr);
-        addProject(project);
+        else {
+            Project project = new Project(inputData.getProjectName());
+            project.setId(++idCr);
+            addProject(project);
+        }
 
     }
 

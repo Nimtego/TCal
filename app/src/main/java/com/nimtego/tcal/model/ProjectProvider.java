@@ -34,6 +34,14 @@ public class ProjectProvider {
         return false;
     }
 
+    public boolean nameIsBusy(String name) {
+        for (Project pr : mProjectList){
+            if (pr.getNameProject().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
     public String[] arrayNames() {
         String[] names = new String[mProjectList.size()];
         for (int i = 0; i < names.length; i++) {
