@@ -12,6 +12,10 @@ public class ProjectProvider {
         mProjectProvider = this;
     }
 
+    public List<Project> getProjectList() {
+        return mProjectList;
+    }
+
     public static ProjectProvider getProjectProvider() {
         if (mProjectProvider == null)
             mProjectProvider = new ProjectProvider();
