@@ -13,6 +13,9 @@ import android.widget.TextView;
 import com.nimtego.tcal.R;
 import com.nimtego.tcal.model.ProjectProvider;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class ProjectListFragment extends ListFragment {
 
     private final String TAG = "ProjectListFragment";
@@ -33,11 +36,11 @@ public class ProjectListFragment extends ListFragment {
         init();
     }
 
-/*    @Override
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_project_blank, null);
-    }*/
+    }
     private void init() {
         mProjectProvider = ProjectProvider.getProjectProvider();
         String[] projectArray = mProjectProvider.arrayNames();
@@ -66,12 +69,15 @@ public class ProjectListFragment extends ListFragment {
                 row = inflater.inflate(R.layout.my_list_project_item, parent,
                         false);
             }
+            String name = mProjectProvider.getProjectList().get(position).getNameProject();
+            Date create = mProjectProvider.getProjectList().get(position).getCreateDate();
+            Date change = mProjectProvider.getProjectList().get(position).getChangeDate();
             TextView nameProject = (TextView) row.findViewById(R.id.name_project_edit_text_blank);
-            nameProject.setText(mProjectProvider.getProjectList().get(position).getNameProject());
+            nameProject.setText(name);
             TextView createData = (TextView) row.findViewById(R.id.create_data_edit_text);
-            createData.setText(mProjectProvider.getProjectList().get(position).getCreateDate().toString());
+            createData.setText(create.toString());
             TextView changeData = (TextView) row.findViewById(R.id.change_data_edit_text);
-            changeData.setText(mProjectProvider.getProjectList().get(position).getChangeDate().toString());
+            changeData.setText(change.toString());
 
             return row;
         }
