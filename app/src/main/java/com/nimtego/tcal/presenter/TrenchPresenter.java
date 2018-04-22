@@ -50,7 +50,7 @@ public class TrenchPresenter extends AbstractBasePresenter {
         if (nameIsBusy(inputData.getProjectName()) ) { // TODO: 18.04.2018 hint check?
             commonView.toast("Name is busy");
         }
-        Project project = new Project(inputData);
+        Project project = new Project(inputData.getProjectName());
         project.setId(++idCr);
         addProject(project);
 
@@ -59,13 +59,13 @@ public class TrenchPresenter extends AbstractBasePresenter {
     private void addProject(Project project) {
         Log.v(TAG, " add project");
         mProjectList.add(project);
-        commonView.toast(project.getName());
+        commonView.toast(project.getNameProject());
     }
 
 
     private boolean nameIsBusy(String projectName) {
         for (Project pj : mProjectList) {
-            if (pj.getInputDate().getProjectName().equals(projectName))
+            if (pj.getNameProject().equals(projectName))
                 return true;
         }
         return false;

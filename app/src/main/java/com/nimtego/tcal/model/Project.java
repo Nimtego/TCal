@@ -1,29 +1,49 @@
 package com.nimtego.tcal.model;
 
 
+import java.util.Date;
+
 public class Project {
     private long mId;
+    private String nameProject;
+    private Date createDate;
+    private Date changeDate;
 
-    private InputData mInputData;
-    private CalculateData mCalculateData;
-
-    public Project(InputData inputData) {
-        mInputData = inputData;
-        mId = 0L;
+    public Project(String nameProject) {
+        this.nameProject = nameProject;
+        createDate = new Date();
+        changeDate = new Date();
     }
 
-    public InputData getInputDate() {
-        return mInputData;
+    public long getId() {
+        return mId;
     }
 
     public void setId(long id) {
         mId = id;
     }
-    public long getId() {
-        return mId;
+
+    public String getNameProject() {
+        return nameProject;
     }
 
-    public String getName() {
-        return mInputData.getProjectName();
+    public void setNameProject(String nameProject) {
+        this.nameProject = nameProject;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getChangeDate() {
+        return changeDate;
+    }
+
+    public void setChangeDate(Date changeDate) {
+        this.changeDate = changeDate;
     }
 }
