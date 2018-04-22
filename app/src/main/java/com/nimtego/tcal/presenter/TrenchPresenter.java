@@ -6,6 +6,7 @@ import android.view.View;
 import com.nimtego.tcal.R;
 import com.nimtego.tcal.model.InputData;
 import com.nimtego.tcal.model.Project;
+import com.nimtego.tcal.model.ProjectProvider;
 import com.nimtego.tcal.view.MainView;
 
 import java.util.ArrayList;
@@ -58,7 +59,7 @@ public class TrenchPresenter extends AbstractBasePresenter {
 
     private void addProject(Project project) {
         Log.v(TAG, " add project");
-        mProjectList.add(project);
+        ProjectProvider.getProjectProvider().add(project);
         commonView.toast(project.getNameProject());
     }
 

@@ -76,4 +76,9 @@ public class MainActivity extends AppCompatActivity implements MainView {
     public void alarm(String message) {
 
     }
+
+    @Override
+    public void intent(Class<MainActivity> commonView) {
+
+    }
 }

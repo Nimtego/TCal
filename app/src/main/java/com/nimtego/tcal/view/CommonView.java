@@ -8,4 +8,5 @@ package com.nimtego.tcal.view;
 public interface CommonView {
     void toast(String message);
     void alarm(String message);
+    void intent(Class<MainActivity> commonView);
 }
