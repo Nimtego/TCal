@@ -17,6 +17,12 @@ public class ListProjectActivity extends AppCompatActivity implements CommonView
         init();
     }
 
+    
+
+    // TODO: 23.04.2018 remove data base hear
+
+
+
     private void init() {
         mPresenter = new ProjectListPresenter();
         findViewById(R.id.project_add_fragment).setOnClickListener(mPresenter);

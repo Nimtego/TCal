@@ -41,13 +41,21 @@ public class ProjectListFragment extends ListFragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_project_blank, null);
     }
+
     private void init() {
-        mProjectProvider = ProjectProvider.getProjectProvider();
-        String[] projectArray = mProjectProvider.arrayNames();
+        String[] projectArray;
+        if (!ProjectProvider.getProjectProvider().dbHelperIsNull()) {
+            mProjectProvider = ProjectProvider.getProjectProvider();
+            projectArray = new String[mProjectProvider.getList().size()];
+        }
+        else
+            projectArray = new String[0];
+
         MyListAdapter myListAdapter = new MyListAdapter(getActivity(),
                 R.layout.my_list_project_item, projectArray);
         setListAdapter(myListAdapter);
     }
+
     public class MyListAdapter extends ArrayAdapter<String> {
 
         private Context mContext;
@@ -65,19 +73,22 @@ public class ProjectListFragment extends ListFragment {
             LayoutInflater inflater = (LayoutInflater) mContext
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View row = null;
+
             if (inflater != null) {
                 row = inflater.inflate(R.layout.my_list_project_item, parent,
                         false);
             }
-            String name = mProjectProvider.getProjectList().get(position).getNameProject();
-            Date create = mProjectProvider.getProjectList().get(position).getCreateDate();
-            Date change = mProjectProvider.getProjectList().get(position).getChangeDate();
-            TextView nameProject = (TextView) row.findViewById(R.id.name_project_edit_text_blank);
-            nameProject.setText(name);
-            TextView createData = (TextView) row.findViewById(R.id.create_data_edit_text);
-            createData.setText(create.toString());
-            TextView changeData = (TextView) row.findViewById(R.id.change_data_edit_text);
-            changeData.setText(change.toString());
+            if (mProjectProvider != null) {
+                String name = mProjectProvider.getList().get(position).getNameProject();
+                Date create = mProjectProvider.getList().get(position).getCreateDate();
+                Date change = mProjectProvider.getList().get(position).getChangeDate();
+                TextView nameProject = (TextView) row.findViewById(R.id.name_project_edit_text_blank);
+                nameProject.setText(name);
+                TextView createData = (TextView) row.findViewById(R.id.create_data_edit_text);
+                createData.setText(create.toString());
+                TextView changeData = (TextView) row.findViewById(R.id.change_data_edit_text);
+                changeData.setText(change.toString());
+            }
 
             return row;
         }

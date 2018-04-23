@@ -1,5 +1,6 @@
 package com.nimtego.tcal.presenter;
 
+import android.content.Context;
 import android.util.Log;
 import android.view.View;
 
@@ -7,6 +8,7 @@ import com.nimtego.tcal.R;
 import com.nimtego.tcal.model.InputData;
 import com.nimtego.tcal.model.Project;
 import com.nimtego.tcal.model.ProjectProvider;
+import com.nimtego.tcal.model.sql.DBHelperTrench;
 import com.nimtego.tcal.view.MainView;
 
 import java.util.ArrayList;
@@ -15,6 +17,7 @@ import java.util.List;
 public class TrenchPresenter extends AbstractBasePresenter {
     private final String TAG = "TrenchPresenter";
     private List<Project> mProjectList;
+    private ProjectProvider mProjectProvider;
     private static long idCr = 0L;
 
     @Override
@@ -41,10 +44,15 @@ public class TrenchPresenter extends AbstractBasePresenter {
 
     private void getDataFromActivity() {
         InputData inputData = ((MainView)commonView).getData();
+        if (mProjectProvider == null) {
+            mProjectProvider = ProjectProvider.
+                    getProjectProvider();
+            mProjectProvider.setContentDB((Context) commonView);
+        }
         if (inputData.getProjectName().isEmpty() ) { // TODO: 18.04.2018 hint check?
             commonView.toast("Name is empty");
         }
-        else if (ProjectProvider.getProjectProvider().nameIsBusy(inputData.getProjectName())) { // TODO: 18.04.2018 hint check?
+        else if (mProjectProvider.nameIsBusy(inputData.getProjectName())) { // TODO: 18.04.2018 hint check?
             commonView.toast("Name is busy");
         }
         else {
@@ -57,7 +65,7 @@ public class TrenchPresenter extends AbstractBasePresenter {
 
     private void addProject(Project project) {
         Log.v(TAG, " add project");
-        ProjectProvider.getProjectProvider().add(project);
+        mProjectProvider.addProject(project);
         commonView.toast(project.getNameProject());
     }
 

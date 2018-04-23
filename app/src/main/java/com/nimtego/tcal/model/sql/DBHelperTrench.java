@@ -6,6 +6,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.nimtego.tcal.model.Project;
+
+import java.util.List;
+
 import static com.nimtego.tcal.constant.DBConstant.DB_NAME_TRENCH;
 
 public class DBHelperTrench extends SQLiteOpenHelper {
@@ -15,6 +19,7 @@ public class DBHelperTrench extends SQLiteOpenHelper {
     public DBHelperTrench(Context context) {
         super(context, DB_NAME_TRENCH, null, 1);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
